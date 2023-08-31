@@ -2,5 +2,14 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+# Mi serve questo remapping per fare capire a foundry che ogni volta che vede @chainlink/contracts quando faccio le import,
+# deve sostituirvi lib/chainlink-brownie-contracts/contracts/ in quanto ho importato in locale la libreria tramite il 
+# comando forge install
+remappings = [
+    "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
+]
+# Andando a settare questo booleano come true, vado a permettere a foundry di eseguire dei comandi sulla mia bash.
+# La maggior parte del tempo voglio che questa funzione sia off
+ffi = true
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
